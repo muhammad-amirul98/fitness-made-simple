@@ -1,0 +1,83 @@
+/* ---------- Program builder (internal tool) ---------- */
+.internal-tag{
+  font-size:12.5px;
+  color:var(--muted-dim);
+  font-family:'Inter',sans-serif;
+  text-align:right;
+}
+
+@media (max-width:480px){
+  header nav{ flex-wrap:wrap; gap:8px; row-gap:4px; }
+  .internal-tag{ font-size:11px; text-align:left; }
+}
+
+.pb-intro{
+  color:var(--muted);
+  font-size:15px;
+  max-width:640px;
+  margin:-20px 0 36px;
+}
+
+.pb-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+
+.pb-form{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.pb-form label{
+  font-size:13px;
+  font-weight:600;
+  color:var(--muted);
+  margin-bottom:-6px;
+}
+.pb-form input, .pb-form select, .pb-form textarea{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:12px 14px;
+  font-family:'Inter',sans-serif;
+  font-size:14.5px;
+  color:var(--white);
+}
+.pb-form textarea{ resize:vertical; min-height:70px; }
+
+.pb-output{
+  position:sticky;
+  top:90px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.pb-output label{
+  font-size:13px;
+  font-weight:600;
+  color:var(--muted);
+}
+#pb-result{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:20px;
+  color:var(--white);
+  font-family:'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size:13px;
+  line-height:1.6;
+  min-height:420px;
+  resize:vertical;
+}
+#pb-result::placeholder{ color:var(--muted-dim); font-family:'Inter',sans-serif; }
+
+@media (max-width:900px){
+  .pb-grid{ grid-template-columns:1fr; }
+  .pb-output{ position:static; }
+}

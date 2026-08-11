@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program Builder — internal tool</title>
+<meta name="theme-color" content="#0A0B0D">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/program-builder.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span>Fitness Made Simple SG</a>
+    <span class="internal-tag">Internal tool — not client-facing</span>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <span class="section-tag">Program builder</span>
+      <h2>Draft a client program<span class="rule" aria-hidden="true"></span></h2>
+      <p class="pb-intro">Fill this out, generate the prompt, then paste it into Claude Code or claude.ai to get a first draft. Always review and adjust before giving anything to a client.</p>
+
+      <div class="pb-grid">
+        <form class="pb-form" id="pb-form">
+          <label for="pb-name">Client name (optional)</label>
+          <input id="pb-name" type="text" placeholder="e.g. Wei Ling">
+
+          <label for="pb-age">Age (optional)</label>
+          <input id="pb-age" type="number" min="13" max="100" placeholder="e.g. 34">
+
+          <label for="pb-gender">Gender</label>
+          <select id="pb-gender">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select>
+
+          <label for="pb-goal">Primary goal</label>
+          <select id="pb-goal">
+            <option value="Fat loss">Fat loss</option>
+            <option value="Muscle gain">Muscle gain</option>
+            <option value="General strength & fitness">General strength &amp; fitness</option>
+            <option value="Sport-specific performance">Sport-specific performance</option>
+            <option value="Returning to exercise after a break">Returning to exercise after a break</option>
+          </select>
+
+          <label for="pb-experience">Experience level</label>
+          <select id="pb-experience">
+            <option value="Complete beginner">Complete beginner</option>
+            <option value="Some experience">Some experience</option>
+            <option value="Experienced">Experienced</option>
+          </select>
+
+          <label for="pb-equipment">Equipment available</label>
+          <select id="pb-equipment">
+            <option value="Full gym access">Full gym access</option>
+            <option value="Dumbbells and a bench only">Dumbbells and a bench only</option>
+            <option value="Bodyweight only">Bodyweight only</option>
+            <option value="Custom — see notes below">Custom — see notes below</option>
+          </select>
+
+          <label for="pb-days">Days per week</label>
+          <select id="pb-days">
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+
+          <label for="pb-duration">Session length</label>
+          <select id="pb-duration">
+            <option value="30 minutes">30 minutes</option>
+            <option value="45 minutes">45 minutes</option>
+            <option value="60 minutes" selected>60 minutes</option>
+            <option value="90 minutes">90 minutes</option>
+          </select>
+
+          <label for="pb-length">Program length</label>
+          <select id="pb-length">
+            <option value="4 weeks">4 weeks</option>
+            <option value="8 weeks" selected>8 weeks</option>
+            <option value="12 weeks">12 weeks</option>
+          </select>
+
+          <label for="pb-limitations">Injuries / things to work around (optional)</label>
+          <textarea id="pb-limitations" placeholder="e.g. lower back sensitivity, avoid overhead pressing"></textarea>
+
+          <label for="pb-notes">Additional context (optional)</label>
+          <textarea id="pb-notes" placeholder="e.g. training for a hike in March, prefers morning sessions, equipment notes"></textarea>
+
+          <button type="submit" class="btn-primary" style="justify-content:center; margin-top:6px;">Generate prompt</button>
+        </form>
+
+        <div class="pb-output">
+          <label for="pb-result">Generated prompt</label>
+          <textarea id="pb-result" readonly placeholder="Fill out the form and click Generate prompt — the result will appear here."></textarea>
+          <button type="button" class="btn-ghost" id="pb-copy">Copy prompt</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>Internal tool — Fitness Made Simple SG</span>
+  </div>
+</footer>
+
+<script src="js/program-builder.js"></script>
+</body>
+</html>
