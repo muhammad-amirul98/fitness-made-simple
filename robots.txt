@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fitnessmadesimplesg.netlify.app/sitemap.xml

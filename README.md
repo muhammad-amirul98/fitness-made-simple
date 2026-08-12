@@ -31,9 +31,21 @@ fitness-made-simple/
 │   └── making-the-switch.html  First post
 │
 ├── about.html, programs.html, results.html, contact.html
-│                        Legacy multi-page site — not linked from index.html anymore
+│                        Legacy multi-page site — not linked from index.html anymore, noindexed
 ├── css/style.css        Styles for the legacy pages (moss-green theme)
-└── js/main.js            Scroll reveal, FAQ accordion, mobile menu, form submission — legacy pages only
+├── js/main.js            Scroll reveal, FAQ accordion, mobile menu, form submission — legacy pages only
+│
+├── robots.txt           Allows all crawlers (including AI crawlers like GPTBot/ClaudeBot), points to sitemap.xml
+├── sitemap.xml           Live pages only (index, faq, blog index, blog post)
+└── llms.txt              Plain-text summary of the business for AI/LLM crawlers (emerging convention, not a formal standard yet)
+```
+
+## SEO / AI search
+
+- **Structured data (JSON-LD)**: `LocalBusiness` schema on `index.html` (with pricing as `Offer`s), `FAQPage` schema on `faq.html`, `BlogPosting` schema on `blog/making-the-switch.html`. If you edit the visible pricing/FAQ/post content, update the matching JSON-LD block too — they're not generated automatically, so they can drift out of sync with the visible page.
+- **Canonical URLs**: every live page has a `<link rel="canonical">` pointing to the clean URL (e.g. `/faq`, not `/faq.html`) — Netlify serves both, so canonical tags stop them from counting as duplicate content.
+- **noindex**: `program-builder.html` (internal tool), `testimonials.html` (placeholder, thin content), and the 4 legacy pages are all marked `noindex` so they don't show up in search results or dilute the site's topical relevance.
+- All of the above hardcodes `https://fitnessmadesimplesg.netlify.app` — if you ever move to a custom domain, these all need updating: canonical tags, JSON-LD `url`/`mainEntityOfPage` fields, `sitemap.xml`, and `robots.txt`'s `Sitemap:` line.
 ```
 
 ## Adding a new blog post

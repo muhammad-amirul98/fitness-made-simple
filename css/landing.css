@@ -225,7 +225,7 @@ section{ padding:76px 0; }
   display:block;
   margin-bottom:10px;
 }
-h2{
+h1, h2{
   font-family:'Sora',sans-serif;
   font-weight:800;
   font-size:clamp(1.6rem,3vw,2.1rem);
@@ -233,7 +233,7 @@ h2{
   text-transform:uppercase;
   margin-bottom:36px;
 }
-h2 .rule{
+h1 .rule, h2 .rule{
   display:block;
   width:34px; height:3px;
   background:var(--acid);

@@ -1,0 +1,20 @@
+# Fitness Made Simple SG
+
+> 1-on-1 personal training in Singapore for busy professionals and complete beginners. In-person coaching in the East and CBD, plus online coaching. No cookie-cutter programs, no gym intimidation.
+
+Fitness Made Simple SG is an independent personal training business run by a single coach with 10+ years of hands-on training experience, currently completing NCSF certification (expected October 2026). Training is available in-person in Singapore (East and CBD) or online with async check-ins.
+
+## Pricing
+- East (in-person): $100/session
+- CBD (in-person): $150/session
+- Online coaching: $200/month
+
+## Pages
+- [Home](https://fitnessmadesimplesg.netlify.app/): overview, pricing, and contact form
+- [FAQ](https://fitnessmadesimplesg.netlify.app/faq): answers to common questions about training, experience level, injuries, and how sessions work
+- [Blog](https://fitnessmadesimplesg.netlify.app/blog/): notes on training and coaching
+
+## Contact
+- Email: fitnessmadesimplesg@gmail.com
+- Phone: +65 9782 5995
+- Based in: Singapore
