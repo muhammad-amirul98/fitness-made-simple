@@ -2,20 +2,24 @@
 
 `index.html` is a single-page lead-capture landing page (dark / acid-green theme, matched to `poster_v1.png`) — this is the live site now, built for driving inquiries from Carousell/Bark/Superprof/Gumtree outreach. No build tools, no frameworks — just HTML, CSS, and JS.
 
-The original multi-page marketing site (about/programs/results/faq/contact) is still in the folder but no longer linked from the homepage — kept around in case it's useful again once the business is more established.
+The original multi-page marketing site (about/programs/results/contact) is still in the folder but no longer linked from the homepage — kept around in case it's useful again once the business is more established. `faq.html` used to be part of that set but has since been rebuilt in the current dark theme and is live, linked from every page's nav.
 
 ## Structure
 
 ```
 fitness-made-simple/
 ├── index.html          Home — single-page lead-capture landing (live)
+├── faq.html             FAQ (live, dark theme, linked from nav)
+├── testimonials.html    Placeholder until there are real testimonials (live, linked from nav)
 ├── program-builder.html  Internal tool — drafts a Claude prompt for a client's training program
 ├── css/
-│   ├── landing.css     Styles for index.html (dark / acid-green theme)
+│   ├── landing.css     Styles for index.html + shared header/nav (dark / acid-green theme)
+│   ├── faq.css           Extra styles for faq.html (accordion)
 │   ├── program-builder.css  Extra styles for program-builder.html
 │   └── blog.css         Extra styles for the blog (post list + article layout)
 ├── js/
 │   ├── landing.js       Scroll reveal, toast, lead form submission (both forms)
+│   ├── faq.js            FAQ accordion open/close
 │   ├── program-builder.js  Builds the prompt text for program-builder.html
 │   └── config.js        Contact form endpoint URL (shared by landing.js and main.js)
 │
@@ -23,7 +27,7 @@ fitness-made-simple/
 │   ├── index.html       Post list
 │   └── making-the-switch.html  First post
 │
-├── about.html, programs.html, results.html, faq.html, contact.html
+├── about.html, programs.html, results.html, contact.html
 │                        Legacy multi-page site — not linked from index.html anymore
 ├── css/style.css        Styles for the legacy pages (moss-green theme)
 └── js/main.js            Scroll reveal, FAQ accordion, mobile menu, form submission — legacy pages only
@@ -40,7 +44,7 @@ There's no CMS — each post is a plain HTML file in `blog/`, copied from `makin
 ## Connecting the lead forms to Google Sheets
 
 `index.html` has **two forms**, both submitting to the same Google Sheet:
-- **Quick inquiry** (in the "Get in touch" section) — low-friction, for cold leads: name, email/phone, package, source
+- **Quick inquiry** (in the "Get in touch" section) — low-friction, for cold leads: name, email/phone, package, source, and an optional free-text message for people who just have a question
 - **Detailed intake** (further down, `#intake`) — for people who already know they want to start: everything from the quick form plus age, gender, preferred venue, preferred days/times (multi-select), goal, experience level, equipment, days/week, session length, injuries, and notes
 
 Both send a `formType` field (`"quick"` or `"detailed"`) so you can tell them apart in the sheet. The detailed form sends more fields than the quick one — `appendRow` below just leaves a cell blank when a field wasn't part of that submission.
@@ -65,6 +69,7 @@ This step needs to happen once, manually, since Google requires you to authorize
        data.phone || '',
        data.package || '',
        data.source || '',
+       data.message || '',
        data.age || '',
        data.gender || '',
        data.location || '',
@@ -83,7 +88,7 @@ This step needs to happen once, manually, since Google requires you to authorize
    }
    ```
 
-   Add a header row to the sheet if you want one: `Timestamp | Form Type | Name | Email | Phone | Package | Source | Age | Gender | Venue | Preferred Days | Preferred Times | Goal | Experience | Equipment | Days/Week | Session Length | Limitations | Notes`.
+   Add a header row to the sheet if you want one: `Timestamp | Form Type | Name | Email | Phone | Package | Source | Message | Age | Gender | Venue | Preferred Days | Preferred Times | Goal | Experience | Equipment | Days/Week | Session Length | Limitations | Notes`.
 
    `Preferred Days` and `Preferred Times` come from checkboxes, so if someone selects more than one option (e.g. both Weekdays and Weekends), that cell will contain a comma-separated list rather than a single value.
 

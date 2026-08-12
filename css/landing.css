@@ -103,11 +103,11 @@ nav{
 .nav-link:hover, .nav-link:focus-visible{ color:var(--white); }
 
 @media (max-width:480px){
-  nav{ padding:16px 20px; }
-  .logo{ font-size:12px; gap:7px; }
-  .logo-mark{ width:18px; height:18px; }
-  .nav-right{ gap:12px; }
-  .nav-cta{ padding:9px 14px; font-size:12.5px; white-space:nowrap; }
+  nav{ flex-wrap:wrap; padding:14px 20px; row-gap:10px; }
+  .logo{ font-size:13px; gap:7px; white-space:nowrap; }
+  .logo-mark{ width:19px; height:19px; }
+  .nav-right{ width:100%; gap:16px; }
+  .nav-cta{ padding:8px 14px; font-size:12.5px; white-space:nowrap; }
   .nav-link{ font-size:13px; }
 }
 
@@ -343,7 +343,7 @@ h2 .rule{
   color:var(--muted);
   margin-bottom:-6px;
 }
-.lead-form input, .lead-form select{
+.lead-form input, .lead-form select, .lead-form textarea{
   background:var(--bg);
   border:1px solid var(--border);
   border-radius:var(--radius-sm);
@@ -353,6 +353,7 @@ h2 .rule{
   color:var(--white);
 }
 .lead-form select{ appearance:none; }
+.lead-form textarea{ resize:vertical; min-height:80px; }
 .form-note{
   margin-top:4px;
   font-size:12.5px;
@@ -387,8 +388,8 @@ h2 .rule{
   grid-template-columns:1fr 1fr;
   gap:18px 20px;
 }
-.detail-form .field{ display:flex; flex-direction:column; gap:6px; }
-.detail-form .field-full{ grid-column:1 / -1; }
+.detail-form .field{ display:flex; flex-direction:column; gap:6px; min-width:0; }
+.detail-form .field-full{ grid-column:1 / -1; min-width:0; }
 .detail-form label{
   font-size:13px;
   font-weight:600;
@@ -402,6 +403,8 @@ h2 .rule{
   font-family:'Inter',sans-serif;
   font-size:14.5px;
   color:var(--white);
+  min-width:0;
+  width:100%;
 }
 .detail-form select{ appearance:none; }
 .detail-form textarea{ resize:vertical; min-height:90px; }
