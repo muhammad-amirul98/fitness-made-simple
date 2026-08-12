@@ -10,7 +10,10 @@ The original multi-page marketing site (about/programs/results/contact) is still
 fitness-made-simple/
 ├── index.html          Home — single-page lead-capture landing (live)
 ├── faq.html             FAQ (live, dark theme, linked from nav)
-├── testimonials.html    Placeholder until there are real testimonials (live, linked from nav)
+├── testimonials.html    Placeholder until there are real testimonials (live, but NOT linked from nav —
+│                        an empty "coming soon" section in the main scroll path would hurt conversion.
+│                        Once there's real content, move it onto index.html as a section near the CTA
+│                        instead of keeping it a separate page — testimonials convert better inline.)
 ├── program-builder.html  Internal tool — drafts a Claude prompt for a client's training program
 ├── css/
 │   ├── landing.css     Styles for index.html + shared header/nav (dark / acid-green theme)
