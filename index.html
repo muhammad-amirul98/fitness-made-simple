@@ -43,10 +43,17 @@
   "makesOffer": [
     {
       "@type": "Offer",
+      "name": "Program Only",
+      "priceCurrency": "SGD",
+      "price": "90",
+      "description": "Custom training program with a monthly check-in and program update, per month"
+    },
+    {
+      "@type": "Offer",
       "name": "Online coaching",
       "priceCurrency": "SGD",
       "price": "200",
-      "description": "Remote programming with async check-ins, per month"
+      "description": "Remote programming with weekly async check-ins, form review, and ongoing adjustments, per month"
     }
   ]
 }
@@ -93,9 +100,14 @@
       <h2 class="reveal">Simple, upfront rates<span class="rule" aria-hidden="true"></span></h2>
       <div class="pricing-grid reveal">
         <div class="price-card">
+          <div class="tier-name">Program Only</div>
+          <div class="tier-price">$90<span>/mo</span></div>
+          <div class="tier-note">custom program + monthly check-in</div>
+        </div>
+        <div class="price-card">
           <div class="tier-name">Online Coaching</div>
           <div class="tier-price">$200<span>/mo</span></div>
-          <div class="tier-note">custom programming + async check-ins</div>
+          <div class="tier-note">custom programming + weekly check-ins</div>
         </div>
       </div>
     </div>
@@ -149,6 +161,7 @@
           <label for="lead-package">Which package are you interested in?</label>
           <select id="lead-package" name="package" required>
             <option value="" disabled selected>Select a package</option>
+            <option value="Program Only — $90/mo">Program Only — $90/mo</option>
             <option value="Online coaching — $200/mo">Online coaching — $200/mo</option>
             <option value="Not sure yet">Not sure yet</option>
           </select>
@@ -199,6 +212,7 @@
           <label for="intake-package">Which package?</label>
           <select id="intake-package" name="package" required>
             <option value="" disabled selected>Select a package</option>
+            <option value="Program Only — $90/mo">Program Only — $90/mo</option>
             <option value="Online coaching — $200/mo">Online coaching — $200/mo</option>
             <option value="Not sure yet">Not sure yet</option>
           </select>
