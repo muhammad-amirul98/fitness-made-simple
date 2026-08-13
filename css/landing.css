@@ -274,6 +274,25 @@ h1 .rule, h2 .rule{
 
 @media (max-width:900px){ .pricing-grid{ grid-template-columns:1fr; } }
 
+.included-block{
+  margin-top:40px;
+  padding-top:32px;
+  border-top:1px solid var(--border);
+}
+.included-block h3{
+  font-family:'Sora',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  margin-bottom:16px;
+}
+
+.section-note{
+  color:var(--muted);
+  font-size:15.5px;
+  margin-top:20px;
+}
+.section-note a{ color:var(--acid); font-weight:700; text-decoration:underline; }
+
 /* ---------- Why train with me ---------- */
 .why-list{ list-style:none; max-width:560px; }
 .why-list li{
@@ -287,11 +306,17 @@ h1 .rule, h2 .rule{
 }
 .why-list li:last-child{ border-bottom:none; }
 .why-list li::before{
-  content:"";
-  width:8px; height:8px;
+  content:"✓";
+  width:22px; height:22px;
   border-radius:999px;
-  background:var(--acid);
-  margin-top:8px;
+  background:var(--acid-dim);
+  color:var(--acid);
+  font-size:12px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:1px;
   flex-shrink:0;
 }
 
