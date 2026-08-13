@@ -31,6 +31,15 @@ function showToast(message, type = 'success'){
   toast._hideTimer = setTimeout(() => toast.classList.remove('show'), 3500);
 }
 
+// WhatsApp click tracking
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function'){
+      gtag('event', 'contact_whatsapp');
+    }
+  });
+});
+
 // Lead form submission -> Google Sheet via Apps Script
 document.querySelectorAll('form[data-lead-form]').forEach(form => {
   form.addEventListener('submit', async (e) => {
@@ -72,6 +81,9 @@ document.querySelectorAll('form[data-lead-form]').forEach(form => {
       });
       if (note) note.textContent = "Thanks — I'll be in touch shortly.";
       showToast("Message sent — I'll be in touch shortly.");
+      if (typeof gtag === 'function'){
+        gtag('event', 'generate_lead', { form_type: form.dataset.leadForm || '' });
+      }
       form.reset();
     } catch (err) {
       if (note) note.textContent = "Something went wrong — try again, or email directly.";
