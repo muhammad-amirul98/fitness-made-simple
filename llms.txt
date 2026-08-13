@@ -1,20 +1,20 @@
 # Fitness Made Simple SG
 
-> 1-on-1 personal training in Singapore for busy professionals and complete beginners. In-person coaching in the East and CBD, plus online coaching. No cookie-cutter programs, no gym intimidation.
+> 1-on-1 online personal training for busy professionals in Singapore. Custom programming, live coaching calls, and weekly check-ins — no cookie-cutter plans, zero gym intimidation.
 
-Fitness Made Simple SG is an independent personal training business run by a single coach with 10+ years of hands-on training experience, currently completing NCSF certification (expected October 2026). Training is available in-person in Singapore (East and CBD) or online with async check-ins.
+Fitness Made Simple SG is an independent, online-only personal training business run by a single coach with 10+ years of hands-on training experience, currently completing NCSF certification (expected October 2026). All coaching is delivered remotely — no in-person sessions.
 
 ## Pricing
-- East (in-person): $100/session
-- CBD (in-person): $150/session
-- Online coaching: $200/month
+- Gold: $100/month — 30-minute live intro call, custom training program with exercise video demos, weekly check-in (workout log + progress photos), messaging support between check-ins
+- Platinum: $200/month — everything in Gold, plus a live call every two weeks and priority messaging support
 
 ## Pages
 - [Home](https://fitnessmadesimplesg.netlify.app/): overview, pricing, and contact form
-- [FAQ](https://fitnessmadesimplesg.netlify.app/faq): answers to common questions about training, experience level, injuries, and how sessions work
+- [FAQ](https://fitnessmadesimplesg.netlify.app/faq): answers to common questions about training, pricing tiers, experience level, injuries, and how sessions work
 - [Blog](https://fitnessmadesimplesg.netlify.app/blog/): notes on training and coaching
 
 ## Contact
 - Email: fitnessmadesimplesg@gmail.com
 - Phone: +65 9782 5995
+- WhatsApp: https://wa.me/6597825995
 - Based in: Singapore
