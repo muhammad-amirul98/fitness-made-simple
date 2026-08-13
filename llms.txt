@@ -9,8 +9,9 @@ Fitness Made Simple SG is an independent, online-only personal training business
 - Platinum: $200/month — everything in Gold, plus a live call every two weeks and priority messaging support
 
 ## Pages
-- [Home](https://fitnessmadesimplesg.netlify.app/): overview, pricing, and contact form
+- [Home](https://fitnessmadesimplesg.netlify.app/): overview, pricing, and a short contact form
 - [FAQ](https://fitnessmadesimplesg.netlify.app/faq): answers to common questions about training, pricing tiers, experience level, injuries, and how sessions work
+- [Get Started](https://fitnessmadesimplesg.netlify.app/start): full intake form for people ready to begin training
 - [Blog](https://fitnessmadesimplesg.netlify.app/blog/): notes on training and coaching
 
 ## Contact

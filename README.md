@@ -8,7 +8,11 @@ The original multi-page marketing site (about/programs/results/contact) is still
 
 ```
 fitness-made-simple/
-├── index.html          Home — single-page lead-capture landing (live)
+├── index.html          Home — lead-capture landing page (live), quick contact form only
+├── start.html           Full intake form for people who already know they want to start —
+│                        kept as its own page (not a section on index.html) specifically so it
+│                        can be shared as a standalone link when pitching directly, without the
+│                        recipient landing on a page with two different forms on it.
 ├── faq.html             FAQ (live, dark theme, linked from nav)
 ├── testimonials.html    Placeholder until there are real testimonials (live, but NOT linked from nav —
 │                        an empty "coming soon" section in the main scroll path would hurt conversion.
@@ -36,7 +40,7 @@ fitness-made-simple/
 ├── js/main.js            Scroll reveal, FAQ accordion, mobile menu, form submission — legacy pages only
 │
 ├── robots.txt           Allows all crawlers (including AI crawlers like GPTBot/ClaudeBot), points to sitemap.xml
-├── sitemap.xml           Live pages only (index, faq, blog index, blog post)
+├── sitemap.xml           Live pages only (index, faq, start, blog index, blog post)
 └── llms.txt              Plain-text summary of the business for AI/LLM crawlers (emerging convention, not a formal standard yet)
 ```
 
@@ -58,9 +62,9 @@ There's no CMS — each post is a plain HTML file in `blog/`, copied from `makin
 
 ## Connecting the lead forms to Google Sheets
 
-`index.html` has **two forms**, both submitting to the same Google Sheet:
-- **Quick inquiry** (in the "Get in touch" section) — low-friction, for cold leads: name, email/phone, package, source, and an optional free-text message for people who just have a question
-- **Detailed intake** (further down, `#intake`) — for people who already know they want to start: everything from the quick form plus age, gender, preferred venue, preferred days/times (multi-select), goal, experience level, equipment, days/week, session length, injuries, and notes
+There are **two forms across two pages**, both submitting to the same Google Sheet:
+- **Quick inquiry** (`index.html`, "Get in touch" section) — low-friction, for cold leads: name, email/phone, package, source, and an optional free-text message for people who just have a question
+- **Detailed intake** (`start.html`, its own page — see the Structure section above for why) — for people who already know they want to start: everything from the quick form plus age, gender, preferred days/times (multi-select), goal, experience level, equipment, days/week, session length, injuries, and notes
 
 Both send a `formType` field (`"quick"` or `"detailed"`) so you can tell them apart in the sheet. The detailed form sends more fields than the quick one — `appendRow` below just leaves a cell blank when a field wasn't part of that submission.
 
@@ -87,7 +91,6 @@ This step needs to happen once, manually, since Google requires you to authorize
        data.message || '',
        data.age || '',
        data.gender || '',
-       data.location || '',
        data.timingDays || '',
        data.timingBlocks || '',
        data.goal || '',
@@ -103,7 +106,7 @@ This step needs to happen once, manually, since Google requires you to authorize
    }
    ```
 
-   Add a header row to the sheet if you want one: `Timestamp | Form Type | Name | Email | Phone | Package | Source | Message | Age | Gender | Venue | Preferred Days | Preferred Times | Goal | Experience | Equipment | Days/Week | Session Length | Limitations | Notes`.
+   Add a header row to the sheet if you want one: `Timestamp | Form Type | Name | Email | Phone | Package | Source | Message | Age | Gender | Preferred Days | Preferred Times | Goal | Experience | Equipment | Days/Week | Session Length | Limitations | Notes`.
 
    `Preferred Days` and `Preferred Times` come from checkboxes, so if someone selects more than one option (e.g. both Weekdays and Weekends), that cell will contain a comma-separated list rather than a single value.
 
