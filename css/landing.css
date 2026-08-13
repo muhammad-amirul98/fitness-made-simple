@@ -253,6 +253,12 @@ h1 .rule, h2 .rule{
   border:1px solid var(--border);
   border-radius:var(--radius-lg);
   padding:28px 24px;
+  transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.price-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--acid);
+  box-shadow:0 14px 32px rgba(196,255,61,0.1);
 }
 .price-card .tier-name{
   font-family:'Sora',sans-serif;
@@ -296,6 +302,26 @@ h1 .rule, h2 .rule{
 }
 .section-note a{ color:var(--acid); font-weight:700; text-decoration:underline; }
 
+/* ---------- Stat callout ---------- */
+.stat{
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+  margin-bottom:28px;
+}
+.stat-num{
+  font-family:'Sora',sans-serif;
+  font-weight:900;
+  font-size:52px;
+  color:var(--acid);
+  line-height:1;
+}
+.stat-label{
+  font-size:14.5px;
+  color:var(--muted);
+  line-height:1.35;
+}
+
 /* ---------- Why train with me ---------- */
 .why-list{ list-style:none; max-width:560px; }
 .why-list li{
@@ -304,9 +330,13 @@ h1 .rule, h2 .rule{
   gap:14px;
   font-size:16px;
   color:var(--white);
-  padding:14px 0;
+  padding:14px 6px;
+  margin:0 -6px;
+  border-radius:var(--radius-sm);
   border-bottom:1px solid var(--border);
+  transition:background 0.2s ease;
 }
+.why-list li:hover{ background:rgba(255,255,255,0.03); }
 .why-list li:last-child{ border-bottom:none; }
 .why-list li::before{
   content:"✓";
