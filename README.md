@@ -80,6 +80,9 @@ This step needs to happen once, manually, since Google requires you to authorize
 2. Delete anything in the editor and paste this:
 
    ```javascript
+   const NOTIFY_EMAIL = 'fitnessmadesimplesg@gmail.com'; // where you want new-lead notifications sent
+   const CLAUDE_MODEL = 'claude-sonnet-5';
+
    function doPost(e) {
      var sheet = SpreadsheetApp.openById('1shgctLpiUQLHnJn_ML9G_LdL47zMeNqp76W5N5USmQY').getActiveSheet();
      var data = JSON.parse(e.postData.contents);
@@ -105,14 +108,92 @@ This step needs to happen once, manually, since Google requires you to authorize
        data.limitations || '',
        data.notes || ''
      ]);
+
+     // Best-effort side effects — never let these break the actual submission
+     try { sendLeadAutoresponder(data); } catch (err) { Logger.log('Autoresponder failed: ' + err); }
+     try { notifyNewLead(data, sgtTime); } catch (err) { Logger.log('Notification failed: ' + err); }
+
      return ContentService.createTextOutput(JSON.stringify({status: 'success'}))
        .setMimeType(ContentService.MimeType.JSON);
+   }
+
+   // Static "I'll be in touch" reply to the lead themselves — matches the 24h promise on the site
+   function sendLeadAutoresponder(data) {
+     if (!data.email) return;
+     MailApp.sendEmail(
+       data.email,
+       "Thanks for reaching out — Fitness Made Simple SG",
+       "Hi " + (data.name || '') + ",\n\nThanks for getting in touch! I'll personally reply within 24 hours.\n\n— Amirul, Fitness Made Simple SG"
+     );
+   }
+
+   // Emails you the raw submission plus an AI-drafted reply (and program outline, for full intakes)
+   // so you can review, edit, and send it yourself — nothing here goes to the lead automatically.
+   function notifyNewLead(data, sgtTime) {
+     var draft = draftWithClaude(data);
+     var subject = 'New lead: ' + (data.name || 'Unknown') + ' (' + (data.package || 'no package selected') + ')';
+
+     var body = 'New ' + (data.formType === 'detailed' ? 'full intake' : 'quick inquiry') + ' submitted ' + sgtTime + '\n\n' +
+       '--- SUBMISSION ---\n' +
+       'Name: ' + (data.name || '') + '\n' +
+       'Email: ' + (data.email || '') + '\n' +
+       'Phone: ' + (data.phone || '') + '\n' +
+       'Package: ' + (data.package || '') + '\n' +
+       'Source: ' + (data.source || '') + '\n' +
+       (data.message ? 'Message: ' + data.message + '\n' : '') +
+       (data.goal ? 'Goal: ' + data.goal + '\n' : '') +
+       (data.experience ? 'Experience: ' + data.experience + '\n' : '') +
+       (data.equipment ? 'Equipment: ' + data.equipment + '\n' : '') +
+       (data.days ? 'Days/week: ' + data.days + '\n' : '') +
+       (data.duration ? 'Session length: ' + data.duration + '\n' : '') +
+       (data.limitations ? 'Injuries/limitations: ' + data.limitations + '\n' : '') +
+       (data.notes ? 'Notes: ' + data.notes + '\n' : '') +
+       (draft ? '\n--- AI-DRAFTED REPLY (review before sending — do not send as-is) ---\n' + draft.reply +
+         (draft.program ? '\n\n--- AI-DRAFTED PROGRAM OUTLINE (rough first draft) ---\n' + draft.program : '') : '');
+
+     MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+   }
+
+   // Returns null (skipping the AI section entirely) if no API key is configured — no cost, no placeholder text
+   function draftWithClaude(data) {
+     var apiKey = PropertiesService.getScriptProperties().getProperty('ANTHROPIC_API_KEY');
+     if (!apiKey) return null;
+
+     var isDetailed = data.formType === 'detailed';
+
+     var prompt = 'You are drafting an internal note for a solo personal trainer in Singapore (Fitness Made Simple SG) ' +
+       'to help them reply to a new lead. Write in a warm, direct, non-salesy tone matching a coach who genuinely cares, not a marketer.\n\n' +
+       'Lead details:\n' + JSON.stringify(data, null, 2) + '\n\n' +
+       'Write:\n' +
+       '1. A short personalized reply email (3-5 sentences) the coach can edit and send to this lead, referencing specifics they mentioned.\n' +
+       (isDetailed ? '2. A rough first-draft training program outline (not a full program — just a starting structure: split, rough exercise categories per day, sets/reps range) based on their goal, equipment, experience, days/week and any limitations.\n' : '') +
+       '\nReturn ONLY valid JSON: {"reply": "...", "program": "..."}' + (isDetailed ? '' : ' (program can be an empty string)');
+
+     var res = UrlFetchApp.fetch('https://api.anthropic.com/v1/messages', {
+       method: 'post',
+       contentType: 'application/json',
+       headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+       payload: JSON.stringify({
+         model: CLAUDE_MODEL,
+         max_tokens: 1024,
+         messages: [{ role: 'user', content: prompt }]
+       }),
+       muteHttpExceptions: true
+     });
+
+     var json = JSON.parse(res.getContentText());
+     var text = json.content && json.content[0] && json.content[0].text ? json.content[0].text : '{}';
+     text = text.replace(/^```json\s*|\s*```$/g, ''); // strip markdown fences if Claude adds them
+     var parsed = JSON.parse(text);
+     return { reply: parsed.reply || '', program: parsed.program || '' };
    }
    ```
 
    Add a header row to the sheet if you want one: `Timestamp | Form Type | Name | Email | Phone | Package | Source | Message | Age | Gender | Preferred Days | Preferred Times | Goal | Experience | Equipment | Days/Week | Session Length | Limitations | Notes`.
 
    `Preferred Days` and `Preferred Times` come from checkboxes, so if someone selects more than one option (e.g. both Weekdays and Weekends), that cell will contain a comma-separated list rather than a single value.
+
+   **To enable the AI-drafted reply/program email:** get an API key from [console.anthropic.com](https://console.anthropic.com), then in the Apps Script editor go to **Project Settings → Script Properties → Add script property**, name it `ANTHROPIC_API_KEY`, and paste the key as the value. Without this, submissions still log to the sheet and the lead autoresponder still fires — you just won't get the AI draft in your notification email. Costs are billed to your Anthropic account directly, at roughly a fraction of a cent per submission.
 
 3. Click **Deploy → New deployment**
 4. Click the gear icon next to "Select type" → choose **Web app**
