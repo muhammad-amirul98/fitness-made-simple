@@ -19,6 +19,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://fitnessmadesimplesg.netlify.app/start">
 <link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/legal.css">
 </head>
 <body>
 
@@ -159,6 +160,12 @@
           <textarea id="intake-notes" name="notes" placeholder="e.g. training for a hike in March, prefers morning sessions"></textarea>
         </div>
         <div class="field-full">
+          <label class="consent-field">
+            <input type="checkbox" name="consent" required>
+            <span>I've read and agree to the <a href="waiver.html" target="_blank">Liability Waiver &amp; Informed Consent</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</span>
+          </label>
+        </div>
+        <div class="field-full">
           <button type="submit" class="btn-primary" style="justify-content:center;">Send full intake</button>
           <p class="form-note"></p>
         </div>
@@ -170,7 +177,11 @@
 <footer>
   <div class="container footer-inner">
     <span>© 2026 Fitness Made Simple SG.</span>
-    <a href="mailto:fitnessmadesimplesg@gmail.com">fitnessmadesimplesg@gmail.com</a>
+    <div class="footer-links">
+      <a href="mailto:fitnessmadesimplesg@gmail.com">fitnessmadesimplesg@gmail.com</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="waiver.html">Liability Waiver</a>
+    </div>
   </div>
 </footer>
 

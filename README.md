@@ -14,6 +14,9 @@ fitness-made-simple/
 │                        can be shared as a standalone link when pitching directly, without the
 │                        recipient landing on a page with two different forms on it.
 ├── faq.html             FAQ (live, dark theme, linked from nav)
+├── privacy.html          Privacy Policy (PDPA) — noindexed, linked from every footer and both forms
+├── waiver.html           Liability Waiver & Informed Consent — noindexed, linked from every footer;
+│                        start.html gates submission on a required checkbox agreeing to this + privacy.html
 ├── testimonials.html    Placeholder until there are real testimonials (live, but NOT linked from nav —
 │                        an empty "coming soon" section in the main scroll path would hurt conversion.
 │                        Once there's real content, move it onto index.html as a section near the CTA
@@ -22,6 +25,7 @@ fitness-made-simple/
 ├── css/
 │   ├── landing.css     Styles for index.html + shared header/nav (dark / acid-green theme)
 │   ├── faq.css           Extra styles for faq.html (accordion)
+│   ├── legal.css         Extra styles for privacy.html/waiver.html (prose) + the consent checkbox on start.html
 │   ├── program-builder.css  Extra styles for program-builder.html
 │   └── blog.css         Extra styles for the blog (post list + article layout)
 ├── js/

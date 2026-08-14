@@ -1,0 +1,49 @@
+/* ---------- Legal / prose pages (privacy, waiver) ---------- */
+.legal-content{
+  max-width:760px;
+  margin-top:8px;
+}
+.legal-updated{
+  color:var(--muted-dim);
+  font-size:13px;
+  margin:-24px 0 32px;
+}
+.legal-content h2{
+  font-size:1.15rem;
+  text-transform:none;
+  margin:40px 0 14px;
+}
+.legal-content h2:first-of-type{ margin-top:0; }
+.legal-content p{
+  color:var(--muted);
+  font-size:15px;
+  margin-bottom:14px;
+}
+.legal-content ul{
+  color:var(--muted);
+  font-size:15px;
+  margin:0 0 14px 20px;
+}
+.legal-content li{ margin-bottom:6px; }
+.legal-content strong{ color:var(--white); }
+.legal-content a{ color:var(--acid); text-decoration:underline; }
+.consent-field{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.5;
+}
+.consent-field input{
+  width:16px;
+  height:16px;
+  margin-top:3px;
+  flex-shrink:0;
+  background:none;
+  border:1px solid var(--border);
+  padding:0;
+  accent-color:var(--acid);
+}
+.consent-field span{ flex:1; min-width:0; }
+.consent-field a{ color:var(--acid); text-decoration:underline; }
