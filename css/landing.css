@@ -445,6 +445,28 @@ h1 .rule, h2 .rule{
   .contact-grid{ grid-template-columns:1fr; gap:40px; }
 }
 
+/* ---------- Newsletter opt-in ---------- */
+.newsletter-form{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  gap:12px;
+  margin-top:24px;
+}
+.newsletter-form input[type="email"]{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:13px 16px;
+  font-family:'Inter',sans-serif;
+  font-size:14.5px;
+  color:var(--white);
+  flex:1 1 260px;
+  min-width:0;
+}
+.newsletter-form .btn-primary{ flex-shrink:0; }
+.newsletter-form .form-note{ flex-basis:100%; margin-top:0; }
+
 .intake-nudge{
   margin-top:28px;
   font-size:14px;
