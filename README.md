@@ -212,6 +212,20 @@ This step needs to happen once, manually, since Google requires you to authorize
 
 Until this is set up, both forms show a friendly "not connected yet" message instead of failing silently.
 
+### Alternative: n8n instead of Apps Script (optional, not yet activated)
+
+The Apps Script autoresponder/notification emails have an unresolved bug — sheet writes work, but neither email has been confirmed arriving, and Apps Script's Executions log can't reliably show *when* it broke (see project notes). `automation/n8n-lead-workflow.json` is a ready-to-import [n8n](https://n8n.io) workflow that replicates the exact same behavior (same sheet, same columns, same email copy) but with a per-run execution log showing each step's input/output — much easier to debug than Apps Script.
+
+**To activate it:**
+1. Get an n8n instance running — easiest is the free trial at [n8n.io](https://n8n.io) (cloud, no server to maintain); self-hosting (Docker) is free long-term but needs a host that stays running.
+2. In the n8n editor: **Workflows → Import from File** → select `automation/n8n-lead-workflow.json`.
+3. Open the **Log to Sheet** node → connect your Google account, confirm the sheet's actual tab name (the file has `Sheet1` as a placeholder).
+4. Open **Send autoresponder** and **Notify owner** → connect your Gmail account.
+5. Activate the workflow, then open the **Webhook** node and copy its **Production URL**.
+6. Paste that URL into `js/config.js` as `CONTACT_ENDPOINT`, replacing the Apps Script URL.
+
+This doesn't touch the Apps Script setup above — it's a drop-in replacement for the same `CONTACT_ENDPOINT`, so you can switch back by pasting the old URL back in. The AI-drafted reply step (the `ANTHROPIC_API_KEY` bit above) isn't ported over yet — ask to have it added once the base workflow is confirmed working.
+
 ## Running it locally
 
 You don't need Node, npm, or any build step — it's static HTML. Two options:

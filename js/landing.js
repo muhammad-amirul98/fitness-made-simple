@@ -1,3 +1,18 @@
+// Coach photo (opt-in via SHOW_COACH_PHOTO in js/config.js)
+if (typeof SHOW_COACH_PHOTO !== 'undefined' && SHOW_COACH_PHOTO){
+  const aboutGrid = document.getElementById('aboutGrid');
+  const photoSlot = document.getElementById('aboutPhotoSlot');
+  if (aboutGrid && photoSlot){
+    aboutGrid.classList.add('has-photo');
+    const img = document.createElement('img');
+    img.src = 'assets/coach-gym.jpg';
+    img.alt = '';
+    img.loading = 'lazy';
+    img.className = 'about-photo-img';
+    photoSlot.appendChild(img);
+  }
+}
+
 // Scroll reveal
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {

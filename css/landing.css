@@ -353,6 +353,27 @@ h1 .rule, h2 .rule{
   flex-shrink:0;
 }
 
+/* About section photo (opt-in via SHOW_COACH_PHOTO in js/config.js) */
+.about-grid.has-photo{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:56px;
+  align-items:center;
+}
+.about-photo-slot{ position:relative; }
+.about-photo-img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:var(--radius-lg);
+  border:1px solid var(--border);
+  box-shadow:0 20px 48px rgba(0,0,0,0.4);
+}
+@media (max-width:780px){
+  .about-grid.has-photo{ grid-template-columns:1fr; gap:28px; }
+  .about-photo-slot{ order:-1; max-width:420px; margin:0 auto; }
+}
+
 /* ---------- Contact / CTA band ---------- */
 .contact-section{
   background:var(--acid);
