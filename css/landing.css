@@ -302,6 +302,40 @@ h1 .rule, h2 .rule{
 }
 .section-note a{ color:var(--acid); font-weight:700; text-decoration:underline; }
 
+.testimonial-grid{
+  margin-top:32px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.testimonial-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:26px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.testimonial-photo{
+  width:52px;height:52px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--acid);
+}
+.testimonial-quote{
+  font-size:15.5px;
+  line-height:1.6;
+  color:var(--white);
+}
+.testimonial-name{
+  font-family:'Sora',sans-serif;
+  font-weight:700;
+  font-size:14px;
+  color:var(--acid);
+}
+.testimonial-name span{ color:var(--muted); font-weight:500; }
+
 /* ---------- Stat callout ---------- */
 .stat{
   display:flex;
