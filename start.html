@@ -60,9 +60,18 @@
           <label for="intake-package">Which package?</label>
           <select id="intake-package" name="package" required>
             <option value="" disabled selected>Select a package</option>
-            <option value="Gold — $100/mo">Gold — $100/mo</option>
-            <option value="Platinum — $200/mo">Platinum — $200/mo</option>
+            <option value="Gold — $100/mo (waitlist)" data-offering="gold">Gold — $100/mo (waitlist)</option>
+            <option value="Platinum — $200/mo (waitlist)" data-offering="platinum">Platinum — $200/mo (waitlist)</option>
+            <option value="External Training — $50/session" data-offering="external">External Training — $50/session</option>
             <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="field" data-location-field style="display:none;">
+          <label for="intake-location">Preferred location</label>
+          <select id="intake-location" name="location">
+            <option value="" disabled selected>Select a location</option>
+            <option value="ActiveSG gym">ActiveSG gym</option>
+            <option value="Condo gym">Condo gym</option>
           </select>
         </div>
         <div class="field">

@@ -55,6 +55,13 @@
       "priceCurrency": "SGD",
       "price": "200",
       "description": "1-on-1 online coaching: 30-minute live intro call, custom training program with exercise video demos, weekly check-ins, priority messaging support, plus a live call every two weeks, per month"
+    },
+    {
+      "@type": "Offer",
+      "name": "External Training",
+      "priceCurrency": "SGD",
+      "price": "50",
+      "description": "1-on-1 in-person personal training at an ActiveSG gym or your condo gym, per session"
     }
   ]
 }
@@ -115,20 +122,25 @@
       <span class="section-tag reveal">Pricing</span>
       <h2 class="reveal">Simple, upfront rates<span class="rule" aria-hidden="true"></span></h2>
       <div class="pricing-grid reveal">
-        <div class="price-card">
-          <div class="tier-name">Gold</div>
+        <div class="price-card" id="tier-gold">
+          <div class="tier-name">Gold <span class="tier-badge">Coming soon</span></div>
           <div class="tier-price">$100<span>/mo</span></div>
           <div class="tier-note">Weekly check-ins + messaging support</div>
         </div>
-        <div class="price-card">
-          <div class="tier-name">Platinum</div>
+        <div class="price-card" id="tier-platinum">
+          <div class="tier-name">Platinum <span class="tier-badge">Coming soon</span></div>
           <div class="tier-price">$200<span>/mo</span></div>
           <div class="tier-note">Weekly check-ins + a live call every 2 weeks</div>
+        </div>
+        <div class="price-card" id="tier-external">
+          <div class="tier-name">External Training</div>
+          <div class="tier-price">$50<span>/session</span></div>
+          <div class="tier-note">In-person at an ActiveSG gym or your condo gym</div>
         </div>
       </div>
 
       <div class="included-grid reveal">
-        <div class="included-block">
+        <div class="included-block" id="included-gold">
           <h3>Gold — what's included</h3>
           <ul class="why-list">
             <li>30-minute live intro call to map out your goals, equipment, schedule, and anything to work around</li>
@@ -138,7 +150,7 @@
             <li>Send a form-check video anytime you're unsure about technique</li>
           </ul>
         </div>
-        <div class="included-block">
+        <div class="included-block" id="included-platinum">
           <h3>Platinum — what's included</h3>
           <ul class="why-list">
             <li>Everything in Gold</li>
@@ -146,8 +158,16 @@
             <li>Priority messaging support</li>
           </ul>
         </div>
+        <div class="included-block" id="included-external">
+          <h3>External Training — what's included</h3>
+          <ul class="why-list">
+            <li>1-on-1 in-person session at an ActiveSG gym or your condo gym — you pick</li>
+            <li>Pay per session, no monthly commitment</li>
+            <li>Same coaching approach as online, just face-to-face</li>
+          </ul>
+        </div>
       </div>
-      <p class="section-note reveal">Billed monthly — pause anytime with no charge while paused, resume whenever you're ready.</p>
+      <p class="section-note reveal">Online coaching (Gold/Platinum) is opening in the coming months — get in touch to join the waitlist. External Training is bookable now, pay-per-session.</p>
     </div>
   </section>
 
@@ -247,10 +267,20 @@
           <label for="lead-package">Which package are you interested in?</label>
           <select id="lead-package" name="package" required>
             <option value="" disabled selected>Select a package</option>
-            <option value="Gold — $100/mo">Gold — $100/mo</option>
-            <option value="Platinum — $200/mo">Platinum — $200/mo</option>
+            <option value="Gold — $100/mo (waitlist)" data-offering="gold">Gold — $100/mo (waitlist)</option>
+            <option value="Platinum — $200/mo (waitlist)" data-offering="platinum">Platinum — $200/mo (waitlist)</option>
+            <option value="External Training — $50/session" data-offering="external">External Training — $50/session</option>
             <option value="Not sure yet">Not sure yet</option>
           </select>
+
+          <div class="lead-location-field" data-location-field style="display:none;">
+            <label for="lead-location">Preferred location</label>
+            <select id="lead-location" name="location">
+              <option value="" disabled selected>Select a location</option>
+              <option value="ActiveSG gym">ActiveSG gym</option>
+              <option value="Condo gym">Condo gym</option>
+            </select>
+          </div>
 
           <label for="lead-source">How did you find me?</label>
           <select id="lead-source" name="source" required>

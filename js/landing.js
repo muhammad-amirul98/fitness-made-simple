@@ -13,6 +13,38 @@ if (typeof SHOW_COACH_PHOTO !== 'undefined' && SHOW_COACH_PHOTO){
   }
 }
 
+// Offering visibility flags (SHOW_GOLD / SHOW_PLATINUM / SHOW_EXTERNAL_TRAINING in js/config.js)
+const flagDefault = (name) => typeof window[name] !== 'undefined' ? window[name] : true;
+const offeringFlags = {
+  gold: flagDefault('SHOW_GOLD'),
+  platinum: flagDefault('SHOW_PLATINUM'),
+  external: flagDefault('SHOW_EXTERNAL_TRAINING'),
+};
+['tier-gold', 'included-gold'].forEach(id => { if (!offeringFlags.gold) document.getElementById(id)?.remove(); });
+['tier-platinum', 'included-platinum'].forEach(id => { if (!offeringFlags.platinum) document.getElementById(id)?.remove(); });
+['tier-external', 'included-external'].forEach(id => { if (!offeringFlags.external) document.getElementById(id)?.remove(); });
+document.querySelectorAll('select[name="package"] option[data-offering]').forEach(opt => {
+  if (!offeringFlags[opt.dataset.offering]) opt.remove();
+});
+
+// External Training location field — only shown when that package is selected
+document.querySelectorAll('select[name="package"]').forEach(select => {
+  const form = select.closest('form');
+  const locationField = form?.querySelector('[data-location-field]');
+  if (!locationField) return;
+  const locationSelect = locationField.querySelector('select[name="location"]');
+  const syncLocationField = () => {
+    const isExternal = select.value.startsWith('External Training');
+    locationField.style.display = isExternal ? '' : 'none';
+    if (locationSelect){
+      locationSelect.required = isExternal;
+      if (!isExternal) locationSelect.value = '';
+    }
+  };
+  select.addEventListener('change', syncLocationField);
+  syncLocationField();
+});
+
 // Scroll reveal
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {

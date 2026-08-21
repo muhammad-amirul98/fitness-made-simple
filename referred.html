@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJE7VQXVYT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RJE7VQXVYT');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You've Been Referred — Fitness Made Simple SG</title>
+<meta name="description" content="A friend sent you here — here's a welcome discount to get started with Fitness Made Simple SG.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0B0D">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://fitnessmadesimplesg.netlify.app/referred">
+<link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="index.html#top"><span class="logo-mark" aria-hidden="true"></span>Fitness Made Simple SG</a>
+    <div class="nav-right">
+      <a class="nav-link" href="index.html#testimonials">Testimonials</a>
+      <a class="nav-link" href="faq.html">FAQ</a>
+      <a class="nav-link" href="blog/index.html">Blog</a>
+      <a class="nav-cta" href="index.html#contact">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="section-line">
+    <div class="container">
+      <span class="section-tag">You've been referred</span>
+      <h2>A friend sent you — here's a welcome offer<span class="rule" aria-hidden="true"></span></h2>
+      <p class="section-desc-plain">Someone who trains with me thought you'd be a good fit — here's a welcome offer to get you started:</p>
+      <ul class="why-list" style="margin-bottom:28px;">
+        <li>Online coaching (Gold/Platinum): <strong id="referral-offer-online"></strong></li>
+        <li>External Training (in-person): <strong id="referral-offer-external"></strong></li>
+      </ul>
+
+      <form class="lead-form" data-lead-form="referral" style="max-width:480px; margin-top:8px;">
+        <input type="hidden" name="source" value="Referral">
+
+        <label for="ref-name">Name</label>
+        <input id="ref-name" name="name" type="text" placeholder="Your name" required>
+
+        <label for="ref-email">Email</label>
+        <input id="ref-email" name="email" type="email" placeholder="you@email.com">
+
+        <label for="ref-phone">Phone</label>
+        <input id="ref-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX">
+
+        <label for="ref-referrer">Who referred you?</label>
+        <input id="ref-referrer" name="referredBy" type="text" placeholder="Their name" required>
+
+        <label for="ref-package">Which package are you interested in?</label>
+        <select id="ref-package" name="package" required>
+          <option value="" disabled selected>Select a package</option>
+          <option value="Gold — $100/mo (waitlist)" data-offering="gold">Gold — $100/mo (waitlist)</option>
+          <option value="Platinum — $200/mo (waitlist)" data-offering="platinum">Platinum — $200/mo (waitlist)</option>
+          <option value="External Training — $50/session" data-offering="external">External Training — $50/session</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+
+        <div class="lead-location-field" data-location-field style="display:none;">
+          <label for="ref-location">Preferred location</label>
+          <select id="ref-location" name="location">
+            <option value="" disabled selected>Select a location</option>
+            <option value="ActiveSG gym">ActiveSG gym</option>
+            <option value="Condo gym">Condo gym</option>
+          </select>
+        </div>
+
+        <label for="ref-message">Anything else? (optional)</label>
+        <textarea id="ref-message" name="message" placeholder="Questions, goals, anything worth knowing up front."></textarea>
+
+        <button type="submit" class="btn-primary" style="justify-content:center; margin-top:6px;">Claim my offer</button>
+        <p class="form-note">By submitting, you agree to the <a href="privacy.html">Privacy Policy</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Fitness Made Simple SG.</span>
+    <div class="footer-links">
+      <a href="mailto:fitnessmadesimplesg@gmail.com">fitnessmadesimplesg@gmail.com</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="waiver.html">Liability Waiver</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script>
+  (() => {
+    const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+    const online = typeof REFERRAL_OFFER_ONLINE !== 'undefined' ? REFERRAL_OFFER_ONLINE : 'a welcome discount';
+    const external = typeof REFERRAL_OFFER_EXTERNAL !== 'undefined' ? REFERRAL_OFFER_EXTERNAL : 'a welcome discount';
+    document.getElementById('referral-offer-online').textContent = cap(online);
+    document.getElementById('referral-offer-external').textContent = cap(external);
+  })();
+</script>
+<script src="js/landing.js"></script>
+</body>
+</html>

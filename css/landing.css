@@ -286,6 +286,21 @@ h1 .rule, h2 .rule{
 }
 .price-card .tier-price span{ font-size:15px; font-weight:600; color:var(--muted); }
 .price-card .tier-note{ font-size:13.5px; color:var(--muted-dim); }
+.tier-badge{
+  display:inline-block;
+  font-family:'Inter',sans-serif;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--muted);
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:3px 9px;
+  margin-left:8px;
+  vertical-align:middle;
+}
 
 @media (max-width:900px){ .pricing-grid{ grid-template-columns:1fr; } }
 
@@ -477,6 +492,7 @@ h1 .rule, h2 .rule{
 }
 .lead-form select{ appearance:none; }
 .lead-form textarea{ resize:vertical; min-height:80px; }
+.lead-location-field{ display:flex; flex-direction:column; gap:14px; }
 .form-note{
   margin-top:4px;
   font-size:12.5px;

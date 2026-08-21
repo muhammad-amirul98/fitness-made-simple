@@ -6,3 +6,16 @@ const CONTACT_ENDPOINT =
 // Set to true to show a coach photo (assets/coach-gym.jpg) in the "About your
 // coach" section. Leave false to keep the site text-only, no layout change.
 const SHOW_COACH_PHOTO = true;
+
+// Which offerings are currently bookable — toggle these to match reality
+// (e.g. turn Gold/Platinum off while online coaching hasn't started yet).
+// Each flag hides its pricing card, "what's included" block, and package
+// dropdown option everywhere on the site.
+const SHOW_GOLD = true;
+const SHOW_PLATINUM = true;
+const SHOW_EXTERNAL_TRAINING = true;
+
+// The welcome offers shown on referred.html (the page existing clients share
+// with friends). Edit these to change the offer everywhere it's used.
+const REFERRAL_OFFER_ONLINE = "half price for your first month";
+const REFERRAL_OFFER_EXTERNAL = "your first session free";
