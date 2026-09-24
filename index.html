@@ -54,14 +54,14 @@
       "name": "External Training",
       "priceCurrency": "SGD",
       "price": "80",
-      "description": "1-on-1 in-person personal training at an ActiveSG gym or your condo gym, per hour-long session"
+      "description": "1-on-1 in-person personal training at an ActiveSG gym or your condo gym, hour-long sessions sold in packages of 10-40"
     },
     {
       "@type": "Offer",
       "name": "Studio Training — Raffles Place",
       "priceCurrency": "SGD",
       "price": "140",
-      "description": "1-on-1 in-person personal training at Platinum Fitness, Raffles Place, per hour-long session"
+      "description": "1-on-1 in-person personal training at Platinum Fitness, Raffles Place, hour-long sessions sold in packages of 10-40"
     }
   ]
 }
@@ -143,13 +143,25 @@
         </div>
         <div class="price-card" id="tier-external">
           <div class="tier-name">External Training</div>
-          <div class="tier-price">$80<span>/session</span></div>
-          <div class="tier-note">In-person at an ActiveSG gym or your condo gym, always a full hour</div>
+          <select class="package-select" data-base-price="80" aria-label="Choose a session package for External Training">
+            <option value="10">10 sessions</option>
+            <option value="20">20 sessions</option>
+            <option value="30">30 sessions</option>
+            <option value="40">40 sessions</option>
+          </select>
+          <div class="tier-price"><span class="package-total">$800</span><span class="package-count">for 10 sessions</span></div>
+          <div class="tier-note"><span class="package-detail">$80/session</span><span class="tier-note-desc">In-person at an ActiveSG gym or your condo gym, always a full hour</span></div>
         </div>
         <div class="price-card" id="tier-studio">
           <div class="tier-name">Studio Training</div>
-          <div class="tier-price">$140<span>/session</span></div>
-          <div class="tier-note">In-person at <a href="https://www.platinumfitness.sg/raffles-place" target="_blank" rel="noopener">Platinum Fitness, Raffles Place</a>, always a full hour</div>
+          <select class="package-select" data-base-price="140" aria-label="Choose a session package for Studio Training">
+            <option value="10">10 sessions</option>
+            <option value="20">20 sessions</option>
+            <option value="30">30 sessions</option>
+            <option value="40">40 sessions</option>
+          </select>
+          <div class="tier-price"><span class="package-total">$1,400</span><span class="package-count">for 10 sessions</span></div>
+          <div class="tier-note"><span class="package-detail">$140/session</span><span class="tier-note-desc">In-person at <a href="https://www.platinumfitness.sg/raffles-place" target="_blank" rel="noopener">Platinum Fitness, Raffles Place</a>, always a full hour</span></div>
         </div>
       </div>
 
@@ -170,7 +182,7 @@
           <ul class="why-list">
             <li>1-on-1 in-person session at an ActiveSG gym or your condo gym — you pick</li>
             <li>Every session is a full hour</li>
-            <li>Pay per session, no monthly commitment</li>
+            <li>Sold in packages of 10, 20, 30, or 40 sessions — no monthly commitment, and bigger packages include free bonus sessions</li>
             <li>Same coaching approach as online, just face-to-face</li>
           </ul>
           <p class="section-note">Ready to train? <a href="https://cal.com/fitnessmadesimplesg/1-hour-pt-session" target="_blank" rel="noopener">Pick a time →</a></p>
@@ -180,13 +192,13 @@
           <ul class="why-list">
             <li><span>1-on-1 in-person session at <a href="https://www.platinumfitness.sg/raffles-place" target="_blank" rel="noopener">Platinum Fitness, Raffles Place</a> — a premium 24-hour gym at 50 Raffles Place, steps from Raffles Place MRT</span></li>
             <li>Every session is a full hour</li>
-            <li>Pay per session, no monthly commitment</li>
+            <li>Sold in packages of 10, 20, 30, or 40 sessions — no monthly commitment, and bigger packages include free bonus sessions</li>
             <li>Same coaching approach as online, just face-to-face, in a quieter setting than a public gym</li>
           </ul>
           <p class="section-note">Ready to train? <a href="https://cal.com/fitnessmadesimplesg/1-hour-pt-session" target="_blank" rel="noopener">Pick a time →</a></p>
         </div>
       </div>
-      <p class="section-note reveal">Online coaching is opening in the coming months — get in touch to join the waitlist. External Training and Studio Training are bookable now, pay-per-session.</p>
+      <p class="section-note reveal">Online coaching is opening in the coming months — get in touch to join the waitlist. External Training and Studio Training are bookable now, sold in session packages.</p>
     </div>
   </section>
 

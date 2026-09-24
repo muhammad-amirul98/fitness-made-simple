@@ -27,6 +27,31 @@ document.querySelectorAll('select[name="package"] option[data-offering]').forEac
   if (!offeringFlags[opt.dataset.offering]) opt.remove();
 });
 
+// Session package pricing (External Training / Studio Training) — every 10
+// sessions beyond the first pack of 10 adds one free bonus session.
+document.querySelectorAll('.package-select').forEach(select => {
+  const card = select.closest('.price-card');
+  const totalEl = card?.querySelector('.package-total');
+  const countEl = card?.querySelector('.package-count');
+  const detailEl = card?.querySelector('.package-detail');
+  const basePrice = Number(select.dataset.basePrice);
+  const update = () => {
+    const sessions = Number(select.value);
+    const freeSessions = sessions >= 20 ? Math.floor(sessions / 10) - 1 : 0;
+    const paidSessions = sessions - freeSessions;
+    const total = paidSessions * basePrice;
+    if (totalEl) totalEl.textContent = `$${total.toLocaleString('en-US')}`;
+    if (countEl) countEl.textContent = `for ${sessions} sessions`;
+    if (detailEl){
+      detailEl.textContent = freeSessions > 0
+        ? `$${basePrice}/session — ${freeSessions} free`
+        : `$${basePrice}/session`;
+    }
+  };
+  select.addEventListener('change', update);
+  update();
+});
+
 // External Training location field — only shown when that package is selected
 document.querySelectorAll('select[name="package"]').forEach(select => {
   const form = select.closest('form');
