@@ -443,6 +443,7 @@ h1 .rule, h2 .rule{
   line-height:1.55;
   color:var(--muted);
 }
+.step-card p a{ color:var(--acid); text-decoration:underline; }
 
 /* About section photo (opt-in via SHOW_COACH_PHOTO in js/config.js) */
 .about-grid.has-photo{
