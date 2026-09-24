@@ -286,6 +286,7 @@ h1 .rule, h2 .rule{
 }
 .price-card .tier-price span{ font-size:15px; font-weight:600; color:var(--muted); }
 .price-card .tier-note{ font-size:13.5px; color:var(--muted-dim); }
+.price-card .tier-note a{ color:var(--acid); text-decoration:underline; }
 .tier-badge{
   display:inline-block;
   font-family:'Inter',sans-serif;
