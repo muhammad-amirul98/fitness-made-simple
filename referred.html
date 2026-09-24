@@ -42,8 +42,9 @@
       <h2>A friend sent you — here's a welcome offer<span class="rule" aria-hidden="true"></span></h2>
       <p class="section-desc-plain">Someone who trains with me thought you'd be a good fit — here's a welcome offer to get you started:</p>
       <ul class="why-list" style="margin-bottom:28px;">
-        <li>Online coaching (Gold/Platinum): <strong id="referral-offer-online"></strong></li>
+        <li>Online Coaching: <strong id="referral-offer-online"></strong></li>
         <li>External Training (in-person): <strong id="referral-offer-external"></strong></li>
+        <li>Studio Training, Raffles Place (in-person): <strong id="referral-offer-studio"></strong></li>
       </ul>
 
       <form class="lead-form" data-lead-form="referral" style="max-width:480px; margin-top:8px;">
@@ -64,9 +65,9 @@
         <label for="ref-package">Which package are you interested in?</label>
         <select id="ref-package" name="package" required>
           <option value="" disabled selected>Select a package</option>
-          <option value="Gold — $100/mo (waitlist)" data-offering="gold">Gold — $100/mo (waitlist)</option>
-          <option value="Platinum — $200/mo (waitlist)" data-offering="platinum">Platinum — $200/mo (waitlist)</option>
+          <option value="Online Coaching — $200/mo (waitlist)" data-offering="online">Online Coaching — $200/mo (waitlist)</option>
           <option value="External Training — $80/session" data-offering="external">External Training — $80/session</option>
+          <option value="Studio Training (Raffles Place) — $140/session" data-offering="studio">Studio Training (Raffles Place) — $140/session</option>
           <option value="Not sure yet">Not sure yet</option>
         </select>
 
@@ -106,8 +107,10 @@
     const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
     const online = typeof REFERRAL_OFFER_ONLINE !== 'undefined' ? REFERRAL_OFFER_ONLINE : 'a welcome discount';
     const external = typeof REFERRAL_OFFER_EXTERNAL !== 'undefined' ? REFERRAL_OFFER_EXTERNAL : 'a welcome discount';
+    const studio = typeof REFERRAL_OFFER_STUDIO !== 'undefined' ? REFERRAL_OFFER_STUDIO : 'a welcome discount';
     document.getElementById('referral-offer-online').textContent = cap(online);
     document.getElementById('referral-offer-external').textContent = cap(external);
+    document.getElementById('referral-offer-studio').textContent = cap(studio);
   })();
 </script>
 <script src="js/landing.js"></script>

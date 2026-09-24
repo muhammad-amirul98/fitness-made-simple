@@ -43,3 +43,4 @@
   font-size:14.5px;
   max-width:640px;
 }
+.faq-a a{ color:var(--acid); text-decoration:underline; }

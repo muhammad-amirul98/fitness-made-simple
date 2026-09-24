@@ -44,14 +44,7 @@
   "makesOffer": [
     {
       "@type": "Offer",
-      "name": "Online Coaching — Gold",
-      "priceCurrency": "SGD",
-      "price": "100",
-      "description": "1-on-1 online coaching: 30-minute live intro call, custom training program with exercise video demos, weekly check-ins, and messaging support, per month"
-    },
-    {
-      "@type": "Offer",
-      "name": "Online Coaching — Platinum",
+      "name": "Online Coaching",
       "priceCurrency": "SGD",
       "price": "200",
       "description": "1-on-1 online coaching: 30-minute live intro call, custom training program with exercise video demos, weekly check-ins, priority messaging support, plus a live call every two weeks, per month"
@@ -62,6 +55,13 @@
       "priceCurrency": "SGD",
       "price": "80",
       "description": "1-on-1 in-person personal training at an ActiveSG gym or your condo gym, per hour-long session"
+    },
+    {
+      "@type": "Offer",
+      "name": "Studio Training — Raffles Place",
+      "priceCurrency": "SGD",
+      "price": "140",
+      "description": "1-on-1 in-person personal training at Platinum Fitness, Raffles Place, per hour-long session"
     }
   ]
 }
@@ -149,40 +149,33 @@
       <span class="section-tag reveal">Pricing</span>
       <h2 class="reveal">Simple, upfront rates<span class="rule" aria-hidden="true"></span></h2>
       <div class="pricing-grid reveal">
-        <div class="price-card" id="tier-gold">
-          <div class="tier-name">Gold <span class="tier-badge">Coming soon</span></div>
-          <div class="tier-price">$100<span>/mo</span></div>
-          <div class="tier-note">Weekly check-ins + messaging support</div>
-        </div>
-        <div class="price-card" id="tier-platinum">
-          <div class="tier-name">Platinum <span class="tier-badge">Coming soon</span></div>
+        <div class="price-card" id="tier-online">
+          <div class="tier-name">Online Coaching <span class="tier-badge">Coming soon</span></div>
           <div class="tier-price">$200<span>/mo</span></div>
-          <div class="tier-note">Weekly check-ins + a live call every 2 weeks</div>
+          <div class="tier-note">Weekly check-ins, messaging, and a live call every 2 weeks</div>
         </div>
         <div class="price-card" id="tier-external">
           <div class="tier-name">External Training</div>
           <div class="tier-price">$80<span>/session</span></div>
           <div class="tier-note">In-person at an ActiveSG gym or your condo gym, always a full hour</div>
         </div>
+        <div class="price-card" id="tier-studio">
+          <div class="tier-name">Studio Training</div>
+          <div class="tier-price">$140<span>/session</span></div>
+          <div class="tier-note">In-person at Platinum Fitness, Raffles Place, always a full hour</div>
+        </div>
       </div>
 
       <div class="included-grid reveal">
-        <div class="included-block" id="included-gold">
-          <h3>Gold — what's included</h3>
+        <div class="included-block" id="included-online">
+          <h3>Online Coaching — what's included</h3>
           <ul class="why-list">
             <li>30-minute live intro call to map out your goals, equipment, schedule, and anything to work around</li>
             <li>Custom training program with video demos for every exercise</li>
             <li>Weekly check-in — send your workout log and progress photos, get feedback and adjustments to the plan</li>
-            <li>Messaging support between check-ins for quick questions</li>
-            <li>Send a form-check video anytime you're unsure about technique</li>
-          </ul>
-        </div>
-        <div class="included-block" id="included-platinum">
-          <h3>Platinum — what's included</h3>
-          <ul class="why-list">
-            <li>Everything in Gold</li>
             <li>A live call every two weeks — going deeper than messaging on progress, programming, and sticking points</li>
-            <li>Priority messaging support</li>
+            <li>Priority messaging support between check-ins</li>
+            <li>Send a form-check video anytime you're unsure about technique</li>
           </ul>
         </div>
         <div class="included-block" id="included-external">
@@ -194,8 +187,17 @@
             <li>Same coaching approach as online, just face-to-face</li>
           </ul>
         </div>
+        <div class="included-block" id="included-studio">
+          <h3>Studio Training — what's included</h3>
+          <ul class="why-list">
+            <li>1-on-1 in-person session at <a href="https://www.platinumfitness.sg/raffles-place" target="_blank" rel="noopener">Platinum Fitness, Raffles Place</a> — a premium 24-hour gym at 50 Raffles Place, steps from Raffles Place MRT</li>
+            <li>Every session is a full hour</li>
+            <li>Pay per session, no monthly commitment</li>
+            <li>Same coaching approach as online, just face-to-face, in a quieter setting than a public gym</li>
+          </ul>
+        </div>
       </div>
-      <p class="section-note reveal">Online coaching (Gold/Platinum) is opening in the coming months — get in touch to join the waitlist. External Training is bookable now, pay-per-session.</p>
+      <p class="section-note reveal">Online coaching is opening in the coming months — get in touch to join the waitlist. External Training and Studio Training are bookable now, pay-per-session.</p>
     </div>
   </section>
 
@@ -212,6 +214,7 @@
             <span class="stat-label">years training myself,<br>before coaching anyone</span>
           </div>
           <ul class="why-list reveal">
+            <li>Hands-on coaching experience with real clients aged 17 to 40+, across fat loss, weight loss, and muscle gain goals</li>
             <li>Personalized programs, not cookie-cutter plans</li>
             <li>Complete-beginner friendly — no judgment, ever</li>
             <li>Flexible scheduling, built around your calendar</li>
@@ -236,7 +239,7 @@
           <div class="testimonial-card">
             <img src="assets/testimonials/NAME.jpg" alt="NAME" class="testimonial-photo">
             <p class="testimonial-quote">"Quote goes here."</p>
-            <div class="testimonial-name">Name <span>— Gold, since Month Year</span></div>
+            <div class="testimonial-name">Name <span>— Online Coaching, since Month Year</span></div>
           </div>
         </div>
       -->
@@ -320,9 +323,9 @@
           <label for="lead-package">Which package are you interested in?</label>
           <select id="lead-package" name="package" required>
             <option value="" disabled selected>Select a package</option>
-            <option value="Gold — $100/mo (waitlist)" data-offering="gold">Gold — $100/mo (waitlist)</option>
-            <option value="Platinum — $200/mo (waitlist)" data-offering="platinum">Platinum — $200/mo (waitlist)</option>
+            <option value="Online Coaching — $200/mo (waitlist)" data-offering="online">Online Coaching — $200/mo (waitlist)</option>
             <option value="External Training — $80/session" data-offering="external">External Training — $80/session</option>
+            <option value="Studio Training (Raffles Place) — $140/session" data-offering="studio">Studio Training (Raffles Place) — $140/session</option>
             <option value="Not sure yet">Not sure yet</option>
           </select>
 

@@ -13,16 +13,16 @@ if (typeof SHOW_COACH_PHOTO !== 'undefined' && SHOW_COACH_PHOTO){
   }
 }
 
-// Offering visibility flags (SHOW_GOLD / SHOW_PLATINUM / SHOW_EXTERNAL_TRAINING in js/config.js)
+// Offering visibility flags (SHOW_ONLINE_COACHING / SHOW_EXTERNAL_TRAINING / SHOW_STUDIO_TRAINING in js/config.js)
 const flagDefault = (name) => typeof window[name] !== 'undefined' ? window[name] : true;
 const offeringFlags = {
-  gold: flagDefault('SHOW_GOLD'),
-  platinum: flagDefault('SHOW_PLATINUM'),
+  online: flagDefault('SHOW_ONLINE_COACHING'),
   external: flagDefault('SHOW_EXTERNAL_TRAINING'),
+  studio: flagDefault('SHOW_STUDIO_TRAINING'),
 };
-['tier-gold', 'included-gold'].forEach(id => { if (!offeringFlags.gold) document.getElementById(id)?.remove(); });
-['tier-platinum', 'included-platinum'].forEach(id => { if (!offeringFlags.platinum) document.getElementById(id)?.remove(); });
+['tier-online', 'included-online'].forEach(id => { if (!offeringFlags.online) document.getElementById(id)?.remove(); });
 ['tier-external', 'included-external'].forEach(id => { if (!offeringFlags.external) document.getElementById(id)?.remove(); });
+['tier-studio', 'included-studio'].forEach(id => { if (!offeringFlags.studio) document.getElementById(id)?.remove(); });
 document.querySelectorAll('select[name="package"] option[data-offering]').forEach(opt => {
   if (!offeringFlags[opt.dataset.offering]) opt.remove();
 });
