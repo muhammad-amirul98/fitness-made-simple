@@ -10,8 +10,8 @@
   --bg-soft:#111317;
   --surface:#141517;
   --border:#323436;
-  --acid:#C4FF3D;
-  --acid-dim:rgba(196,255,61,0.12);
+  --acid:#B8E245;
+  --acid-dim:rgba(184,226,69,0.12);
   --white:#F5F5F3;
   --muted:#A8AAA8;
   --muted-dim:#6B6E6C;
@@ -440,12 +440,12 @@ h1 .rule, h2 .rule{
 }
 .not-list li:last-child{ border-bottom:none; }
 .not-list li::before{
-  content:"✕";
+  content:"→";
   width:22px; height:22px;
   border-radius:999px;
   background:rgba(255,255,255,0.05);
   color:var(--muted-dim);
-  font-size:11px;
+  font-size:12px;
   font-weight:800;
   display:flex;
   align-items:center;
