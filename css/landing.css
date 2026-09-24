@@ -411,6 +411,80 @@ h1 .rule, h2 .rule{
   flex-shrink:0;
 }
 
+/* ---------- Who it's for ---------- */
+.fit-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+.fit-heading{
+  font-family:'Sora',sans-serif;
+  font-weight:800;
+  font-size:16px;
+  margin-bottom:16px;
+}
+.fit-heading--yes{ color:var(--acid); }
+.fit-heading--no{ color:var(--muted); }
+.not-list{ list-style:none; max-width:560px; }
+.not-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  font-size:16px;
+  color:var(--muted);
+  padding:14px 6px;
+  margin:0 -6px;
+  border-radius:var(--radius-sm);
+  border-bottom:1px solid var(--border);
+}
+.not-list li:last-child{ border-bottom:none; }
+.not-list li::before{
+  content:"✕";
+  width:22px; height:22px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.05);
+  color:var(--muted-dim);
+  font-size:11px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:1px;
+  flex-shrink:0;
+}
+
+/* ---------- How it works ---------- */
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:28px;
+}
+.step-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:26px 24px;
+}
+.step-num{
+  font-family:'Sora',sans-serif;
+  font-weight:900;
+  font-size:32px;
+  color:var(--acid);
+  line-height:1;
+  margin-bottom:14px;
+}
+.step-card h3{
+  font-family:'Sora',sans-serif;
+  font-weight:800;
+  font-size:17px;
+  margin-bottom:10px;
+}
+.step-card p{
+  font-size:14.5px;
+  line-height:1.55;
+  color:var(--muted);
+}
+
 /* About section photo (opt-in via SHOW_COACH_PHOTO in js/config.js) */
 .about-grid.has-photo{
   display:grid;
