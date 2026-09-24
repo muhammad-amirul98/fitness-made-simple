@@ -75,9 +75,9 @@
           </select>
         </div>
         <div class="field">
-          <label for="intake-source">How did you find me?</label>
-          <select id="intake-source" name="source" required>
-            <option value="" disabled selected>Select an option</option>
+          <label for="intake-source">How did you find me? (optional)</label>
+          <select id="intake-source" name="source">
+            <option value="" selected>Prefer not to say</option>
             <option value="Carousell">Carousell</option>
             <option value="Bark">Bark</option>
             <option value="Superprof">Superprof</option>
@@ -90,12 +90,12 @@
           <input id="intake-age" name="age" type="number" min="13" max="100" placeholder="e.g. 34">
         </div>
         <div class="field">
-          <label for="intake-gender">Gender</label>
-          <select id="intake-gender" name="gender" required>
-            <option value="" disabled selected>Select gender</option>
+          <label for="intake-gender">Gender (optional — I ask so I can account for it in your program)</label>
+          <select id="intake-gender" name="gender">
+            <option value="" selected>Prefer not to say</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
-            <option value="Other / prefer not to say">Other / prefer not to say</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div class="field field-full">
