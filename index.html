@@ -120,12 +120,12 @@
   <section class="section-line">
     <div class="container">
       <span class="section-tag reveal">Is this you</span>
-      <h2 class="reveal">Built for people who show up everywhere except the gym<span class="rule" aria-hidden="true"></span></h2>
+      <h2 class="reveal">Built for people who want training that finally sticks<span class="rule" aria-hidden="true"></span></h2>
       <ul class="why-list reveal">
         <li>You're busy — work, travel, life — and need a plan that flexes around your week, not one you have to flex your life around</li>
         <li>You've started and stopped before, and want one person tracking the whole picture instead of another app to check</li>
         <li>You want a program built around your actual schedule and equipment, not a generic template</li>
-        <li>You're fine being coached, not chased — you'll put in the work, you just want a second set of eyes on it</li>
+        <li>You want structure and a second set of eyes — not someone chasing you down when life gets busy</li>
       </ul>
     </div>
   </section>
@@ -209,7 +209,7 @@
         <div class="about-text">
           <span class="section-tag reveal">About your coach</span>
           <h2 class="reveal">A coach who's actually in your corner<span class="rule" aria-hidden="true"></span></h2>
-          <p class="section-desc-plain reveal">Before this was a business, it was over a decade of training in the gym — first for myself, then coaching friends who wanted to start but didn't know how. I spent two years as a software engineer, so I know exactly what it's like to sit at a desk for nine hours, tell yourself you'll go after work, and watch that plan quietly die by 7pm. I'm currently completing my NCSF personal training certification, expected October 2026.</p>
+          <p class="section-desc-plain reveal">Before this was a business, it was over a decade of training in the gym — first for myself, then more recently coaching friends and clients who wanted to start but didn't know how. I spent two years as a software engineer, so I know exactly what it's like to sit at a desk for nine hours, tell yourself you'll go after work, and watch that plan quietly die by 7pm. I'm currently completing my NCSF personal training certification, expected October 2026.</p>
           <div class="stat reveal">
             <span class="stat-num">10+</span>
             <span class="stat-label">years training myself,<br>before coaching anyone</span>
@@ -232,7 +232,7 @@
     <div class="container">
       <span class="section-tag reveal">Testimonials</span>
       <h2 class="reveal">The proof is coming<span class="rule" aria-hidden="true"></span></h2>
-      <p class="section-desc-plain reveal">Fitness Made Simple SG is brand new — there's nothing to show here yet, and I'd rather leave this empty than fake it. Every session I log is a step toward results I can actually point to. Check back soon, or <a href="#contact">get in touch</a> and be one of the first names on this page.</p>
+      <p class="section-desc-plain reveal">Fitness Made Simple SG is brand new, so this section is still empty — real client results will go here as they come in. Check back soon, or <a href="#contact">get in touch</a> if you'd like to hear more about how I coach before deciding anything.</p>
       <!--
         When real testimonials are ready, drop this in below (wrap however many in one .testimonial-grid):
 
@@ -321,13 +321,12 @@
           <label for="lead-phone">Phone</label>
           <input id="lead-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX">
 
-          <label for="lead-package">Which package are you interested in?</label>
-          <select id="lead-package" name="package" required>
-            <option value="" disabled selected>Select a package</option>
+          <label for="lead-package">Which package are you interested in? (optional)</label>
+          <select id="lead-package" name="package">
+            <option value="" selected>Not sure yet / just have a question</option>
             <option value="Online Coaching — $200/mo (waitlist)" data-offering="online">Online Coaching — $200/mo (waitlist)</option>
             <option value="External Training — from $80/session (packages)" data-offering="external">External Training — from $80/session (packages)</option>
             <option value="Studio Training (Raffles Place) — from $140/session (packages)" data-offering="studio">Studio Training (Raffles Place) — from $140/session (packages)</option>
-            <option value="Not sure yet">Not sure yet</option>
           </select>
 
           <div class="lead-location-field" data-location-field style="display:none;">
@@ -339,9 +338,9 @@
             </select>
           </div>
 
-          <label for="lead-source">How did you find me?</label>
-          <select id="lead-source" name="source" required>
-            <option value="" disabled selected>Select an option</option>
+          <label for="lead-source">How did you find me? (optional)</label>
+          <select id="lead-source" name="source">
+            <option value="" selected>Prefer not to say</option>
             <option value="Carousell">Carousell</option>
             <option value="Bark">Bark</option>
             <option value="Superprof">Superprof</option>

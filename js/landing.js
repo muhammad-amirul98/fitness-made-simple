@@ -151,8 +151,8 @@ document.querySelectorAll('form[data-lead-form]').forEach(form => {
         headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(data),
       });
-      if (note) note.textContent = "Thanks — I'll be in touch shortly.";
-      showToast("Message sent — I'll be in touch shortly.");
+      if (note) note.textContent = "Thanks — I'll be in touch within 24 hours.";
+      showToast("Message sent — I'll be in touch within 24 hours.");
       if (typeof gtag === 'function'){
         gtag('event', 'generate_lead', { form_type: form.dataset.leadForm || '' });
       }
