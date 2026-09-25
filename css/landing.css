@@ -503,6 +503,7 @@ h1 .rule, h2 .rule{
   gap:56px;
   align-items:start;
 }
+.contact-grid > *{ min-width:0; }
 .contact-section h2{ color:#0A0B0D; }
 .contact-section h2 .rule{ background:#0A0B0D; }
 .contact-info-row{
@@ -548,6 +549,8 @@ h1 .rule, h2 .rule{
   font-family:'Inter',sans-serif;
   font-size:14.5px;
   color:var(--white);
+  min-width:0;
+  width:100%;
 }
 .lead-form select{ appearance:none; }
 .lead-form textarea{ resize:vertical; min-height:80px; }
