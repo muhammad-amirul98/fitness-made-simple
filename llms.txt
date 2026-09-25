@@ -6,7 +6,7 @@ Fitness Made Simple SG is an independent personal training business run by a sin
 
 ## Pricing
 - Online Coaching: $200/month — 30-minute live intro call, custom training program with exercise video demos, weekly check-in (workout log + progress photos), priority messaging support between check-ins, and a live call every two weeks
-- External Training: $80/session, sold in packages of 10/20/30/40 sessions (larger packages include free bonus sessions) — 1-on-1 in-person training at an ActiveSG gym or the client's condo gym
+- External Training: $80/session, sold in packages of 10/20/30/40 sessions (larger packages include free bonus sessions) — 1-on-1 in-person training at an ActiveSG gym or the client's condo gym. First clients: ask about a $70/session introductory rate.
 
 ## Pages
 - [Home](https://fitnessmadesimplesg.netlify.app/): overview, pricing, and a short contact form
