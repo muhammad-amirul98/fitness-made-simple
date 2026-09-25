@@ -6,7 +6,7 @@ if (typeof SHOW_COACH_PHOTO !== 'undefined' && SHOW_COACH_PHOTO){
     aboutGrid.classList.add('has-photo');
     const img = document.createElement('img');
     img.src = 'assets/coach-gym.jpg';
-    img.alt = '';
+    img.alt = 'Personal trainer at Fitness Made Simple SG coaching in a Singapore gym';
     img.loading = 'lazy';
     img.className = 'about-photo-img';
     photoSlot.appendChild(img);
