@@ -18,5 +18,5 @@ const SHOW_STUDIO_TRAINING = true;
 // The welcome offers shown on referred.html (the page existing clients share
 // with friends). Edit these to change the offer everywhere it's used.
 const REFERRAL_OFFER_ONLINE = "half price for your first month";
-const REFERRAL_OFFER_EXTERNAL = "your first session free";
-const REFERRAL_OFFER_STUDIO = "your first session free";
+const REFERRAL_OFFER_EXTERNAL = "one extra session free with any package";
+const REFERRAL_OFFER_STUDIO = "one extra session free with any package";
