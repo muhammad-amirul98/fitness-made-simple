@@ -44,9 +44,9 @@
       <ul class="why-list" style="margin-bottom:20px;">
         <li>Online Coaching: <strong id="referral-offer-online"></strong></li>
         <li>External Training (in-person): <strong id="referral-offer-external"></strong></li>
-        <li>Studio Training, Raffles Place (in-person): <strong id="referral-offer-studio"></strong></li>
+        <li id="referral-row-studio">Studio Training, Raffles Place (in-person): <strong id="referral-offer-studio"></strong></li>
       </ul>
-      <p class="section-desc-plain">For External or Studio Training, this means you choose and pay for a package as normal, and I add one extra session on top, free — so a 10-session package becomes 11 sessions for the same price. See the <a href="policies.html">package &amp; cancellation policy</a> for how packages, expiry, and refunds work.</p>
+      <p class="section-desc-plain">For External Training, this means you choose and pay for a package as normal, and I add one extra session on top, free — so a 10-session package becomes 11 sessions for the same price. See the <a href="policies.html">package &amp; cancellation policy</a> for how packages, expiry, and refunds work.</p>
       <p class="section-desc-plain" style="margin-bottom:28px;">No payment happens here — send your details below and I'll follow up to confirm your offer and get you booked. No obligation either way.</p>
 
       <form class="lead-form" data-lead-form="referral" style="max-width:480px; margin-top:8px;">
@@ -111,6 +111,9 @@
     document.getElementById('referral-offer-online').textContent = cap(online);
     document.getElementById('referral-offer-external').textContent = cap(external);
     document.getElementById('referral-offer-studio').textContent = cap(studio);
+    if (typeof SHOW_STUDIO_TRAINING !== 'undefined' && !SHOW_STUDIO_TRAINING){
+      document.getElementById('referral-row-studio')?.remove();
+    }
   })();
 </script>
 <script src="js/landing.js"></script>
