@@ -206,17 +206,17 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, .btn-primary:
 .hero h1{
   font-family:'Sora',sans-serif;
   font-weight:900;
-  font-size:clamp(2.6rem, 6vw, 4.2rem);
-  line-height:1.02;
-  letter-spacing:-0.01em;
+  font-size:clamp(3.2rem, 8vw, 5.6rem);
+  line-height:0.96;
+  letter-spacing:-0.02em;
   text-transform:uppercase;
-  margin-bottom:22px;
+  margin-bottom:26px;
 }
 .hero h1 .accent{ color:var(--acid); display:block; }
 .hero-desc{
   color:var(--muted);
-  font-size:17px;
-  max-width:520px;
+  font-size:18px;
+  max-width:480px;
   margin-bottom:36px;
 }
 .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
@@ -435,6 +435,43 @@ h1 .rule, h2 .rule{
   justify-content:center;
   margin-top:1px;
   flex-shrink:0;
+}
+
+/* ---------- App vs coach comparison ---------- */
+.compare-table{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  max-width:720px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.compare-col{ background:var(--bg); display:flex; flex-direction:column; }
+.compare-col-coach{ background:var(--surface); }
+.compare-head{
+  font-family:'Sora',sans-serif;
+  font-weight:800;
+  font-size:12.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:18px 20px;
+  color:var(--muted-dim);
+  border-bottom:1px solid var(--border);
+}
+.compare-col-coach .compare-head{ color:var(--acid); }
+.compare-row{
+  padding:16px 20px;
+  font-size:14.5px;
+  line-height:1.4;
+  color:var(--muted);
+  border-bottom:1px solid var(--border);
+}
+.compare-col-coach .compare-row{ color:var(--white); }
+.compare-col .compare-row:last-child{ border-bottom:none; }
+@media (max-width:640px){
+  .compare-table{ grid-template-columns:1fr; }
 }
 
 /* ---------- How it works ---------- */
